@@ -226,7 +226,43 @@ public class Signup extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        String formno = first;
+        String name = textName.getText();
+        String fname = textFname.getText();
+        String dob = ((JTextField) dateChooser.getDateEditor().getUiComponent()).getText();
+        String gender = null;
+        if (r1.isSelected()){
+            gender = "Mashkull";
+        } else if (r2.isSelected()) {
+            gender = "Femër";
+        }
+        String email = textEmail.getText();
+        String status = null;
+        if (s1.isSelected()){
+            status = "Beqar";
+        } else if (s2.isSelected()) {
+            status = "Martuar";
+        } else if (s3.isSelected()) {
+            status = "Divorcuar";
+        }
+        String address = textAdd.getText();
+        String city = textCity.getText();
+        String postcode = textPcode.getText();
+        String state = textState.getText();
 
+        try {
+            if (textName.getText().isEmpty()){
+                JOptionPane.showMessageDialog(null, "Plotësoni të gjitha fushat!");
+            }else {
+              Con con1 = new Con();
+              String q = "insert into signup values('"+formno+"', '"+name+"', '"+fname+"', '"+dob+"', '"+gender+"', '"+email+"', '"+status+"', '"+address+"', '"+city+"', '"+postcode+"', '"+state+"')";
+              con1.statement.executeUpdate(q);
+              new Signup2();
+              setVisible(false);
+            }
+        }catch (Exception E){
+            E.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {
