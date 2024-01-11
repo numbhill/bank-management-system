@@ -217,7 +217,7 @@ public class Signup extends JFrame implements ActionListener {
         image.setBounds(0, 0, 850, 800);
         add(image);
 
-        // Dritarja-----------------------------------------------------------------------------
+        // Dritarja------------------------------------------------------------------------------
         setLayout(null);
         setSize(850,800);
         setLocation(350,20);
@@ -226,17 +226,25 @@ public class Signup extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        // Marrja e të dhënave nga inputet & radio butonat---------------------------------------
+        // Numri i faqes-------------------------------------------------------------------------
         String formno = first;
+        // Emri----------------------------------------------------------------------------------
         String name = textName.getText();
+        // Atësia--------------------------------------------------------------------------------
         String fname = textFname.getText();
+        // Ditëlindja----------------------------------------------------------------------------
         String dob = ((JTextField) dateChooser.getDateEditor().getUiComponent()).getText();
+        // Gjinia--------------------------------------------------------------------------------
         String gender = null;
         if (r1.isSelected()){
             gender = "Mashkull";
         } else if (r2.isSelected()) {
             gender = "Femër";
         }
+        // Email---------------------------------------------------------------------------------
         String email = textEmail.getText();
+        // Status--------------------------------------------------------------------------------
         String status = null;
         if (s1.isSelected()){
             status = "Beqar";
@@ -245,18 +253,26 @@ public class Signup extends JFrame implements ActionListener {
         } else if (s3.isSelected()) {
             status = "Divorcuar";
         }
+        // Adresa--------------------------------------------------------------------------------
         String address = textAdd.getText();
+        // Qyteti--------------------------------------------------------------------------------
         String city = textCity.getText();
+        // Kodi Postar---------------------------------------------------------------------------
         String postcode = textPcode.getText();
+        // Shteti--------------------------------------------------------------------------------
         String state = textState.getText();
 
         try {
+            // Validimi--------------------------------------------------------------------------
             if (textName.getText().isEmpty()){
                 JOptionPane.showMessageDialog(null, "Plotësoni të gjitha fushat!");
             }else {
+                // Lidhja me databazën në tabelën 'signup'----------------------------------------
               Con con1 = new Con();
               String q = "insert into signup values('"+formno+"', '"+name+"', '"+fname+"', '"+dob+"', '"+gender+"', '"+email+"', '"+status+"', '"+address+"', '"+city+"', '"+postcode+"', '"+state+"')";
               con1.statement.executeUpdate(q);
+
+              //Hapja e faqes tjetër--------------------------------------------------------------
               new Signup2();
               setVisible(false);
             }
