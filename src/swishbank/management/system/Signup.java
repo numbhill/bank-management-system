@@ -210,7 +210,7 @@ public class Signup extends JFrame implements ActionListener {
         add(next);
 
         // Background---------------------------------------------------------------------------
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("img/signupbg.png"));
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("img/swishbanksignup.png"));
         Image i2 = i1.getImage().getScaledInstance(850, 800, Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
         JLabel image = new JLabel(i3);
@@ -262,23 +262,21 @@ public class Signup extends JFrame implements ActionListener {
         // Shteti--------------------------------------------------------------------------------
         String state = textState.getText();
 
-        try {
-            // Validimi--------------------------------------------------------------------------
-            if (textName.getText().isEmpty()){
-                JOptionPane.showMessageDialog(null, "Plotësoni të gjitha fushat!");
+        try{
+            if (textName.getText().equals("")){
+                JOptionPane.showMessageDialog(null, "Fill all the fields");
             }else {
-                // Lidhja me databazën në tabelën 'signup'----------------------------------------
-              Con con1 = new Con();
-              String q = "insert into signup values('"+formno+"', '"+name+"', '"+fname+"', '"+dob+"', '"+gender+"', '"+email+"', '"+status+"', '"+address+"', '"+city+"', '"+postcode+"', '"+state+"')";
-              con1.statement.executeUpdate(q);
-
-              //Hapja e faqes tjetër--------------------------------------------------------------
-              new Signup2();
-              setVisible(false);
+                Connn c = new Connn();
+                String q = "insert into signup values('"+formno+"', '"+name+"','"+fname+"','"+dob+"','"+gender+"','"+email+"', '"+address+"', '"+city+"', '"+state+"' )";
+                c.statement.executeUpdate(q);
+                new Signup2(formno);
+                setVisible(false);
             }
+
         }catch (Exception E){
             E.printStackTrace();
         }
+
     }
 
     public static void main(String[] args) {

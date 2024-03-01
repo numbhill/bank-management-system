@@ -9,6 +9,24 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jcalendar-tz-1.3.3-4" level="project" />
-    <orderEntry type="library" name="mysql-connector-java-8.0.28" level="project" />
+    <orderEntry type="library" exported="" name="mysql-connector-java-8.0.28" level="project" />
+    <orderEntry type="module-library">
+      <library name="Java Connector">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$USER_HOME$/Downloads/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0/src/build/java" />
+          <root url="file://$USER_HOME$/Downloads/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0/src/demo/java" />
+          <root url="file://$USER_HOME$/Downloads/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0/src/generated/java" />
+          <root url="file://$USER_HOME$/Downloads/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0/src/legacy/java" />
+          <root url="file://$USER_HOME$/Downloads/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0/src/main/core-api/java" />
+          <root url="file://$USER_HOME$/Downloads/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0/src/main/core-impl/java" />
+          <root url="file://$USER_HOME$/Downloads/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0/src/main/protocol-impl/java" />
+          <root url="file://$USER_HOME$/Downloads/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0/src/main/user-api/java" />
+          <root url="file://$USER_HOME$/Downloads/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0/src/main/user-impl/java" />
+          <root url="file://$USER_HOME$/Downloads/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0/src/test/java" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>
