@@ -264,7 +264,7 @@ public class Signup3 extends JFrame implements ActionListener {
         try {
             if (e.getSource() == s) {
                 if (atype.equals("")) {
-                    JOptionPane.showMessageDialog(null, "Fill all the fields");
+                    JOptionPane.showMessageDialog(null, "Plotësoni të gjitha fushat!");
                 } else {
                     Connn c1 = new Connn();
                     String q1 = "insert into signupthree values('" + formno + "', '" + atype + "','" + cardno + "','" + pin + "','" + fac + "')";
